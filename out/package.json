@@ -1,0 +1,12 @@
+{
+  "name": "newtonian-dynamics",
+  "version": "0.1.0",
+  "files": [
+    "newtonian_dynamics_bg.wasm",
+    "newtonian_dynamics.js",
+    "newtonian_dynamics.d.ts"
+  ],
+  "module": "newtonian_dynamics.js",
+  "types": "newtonian_dynamics.d.ts",
+  "sideEffects": false
+}
