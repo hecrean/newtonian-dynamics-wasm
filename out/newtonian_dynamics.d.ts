@@ -20,14 +20,35 @@ export class CelestialBody {
 */
 export class Position {
   free(): void;
+/**
+* @param {number} x
+* @param {number} y
+* @param {number} z
+* @returns {Position}
+*/
+  static new(x: number, y: number, z: number): Position;
 }
 /**
 */
 export class Time {
   free(): void;
+/**
+* @param {number} year
+* @param {number} month
+* @param {number} day
+* @returns {Time}
+*/
+  static new(year: number, month: number, day: number): Time;
 }
 /**
 */
 export class Velocity {
   free(): void;
+/**
+* @param {number} vx
+* @param {number} vy
+* @param {number} vz
+* @returns {Velocity}
+*/
+  static new(vx: number, vy: number, vz: number): Velocity;
 }

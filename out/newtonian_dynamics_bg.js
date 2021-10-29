@@ -76,6 +76,13 @@ export class CelestialBody {
 */
 export class Position {
 
+    static __wrap(ptr) {
+        const obj = Object.create(Position.prototype);
+        obj.ptr = ptr;
+
+        return obj;
+    }
+
     __destroy_into_raw() {
         const ptr = this.ptr;
         this.ptr = 0;
@@ -87,10 +94,27 @@ export class Position {
         const ptr = this.__destroy_into_raw();
         wasm.__wbg_position_free(ptr);
     }
+    /**
+    * @param {number} x
+    * @param {number} y
+    * @param {number} z
+    * @returns {Position}
+    */
+    static new(x, y, z) {
+        var ret = wasm.position_new(x, y, z);
+        return Position.__wrap(ret);
+    }
 }
 /**
 */
 export class Time {
+
+    static __wrap(ptr) {
+        const obj = Object.create(Time.prototype);
+        obj.ptr = ptr;
+
+        return obj;
+    }
 
     __destroy_into_raw() {
         const ptr = this.ptr;
@@ -103,10 +127,27 @@ export class Time {
         const ptr = this.__destroy_into_raw();
         wasm.__wbg_time_free(ptr);
     }
+    /**
+    * @param {number} year
+    * @param {number} month
+    * @param {number} day
+    * @returns {Time}
+    */
+    static new(year, month, day) {
+        var ret = wasm.time_new(year, month, day);
+        return Time.__wrap(ret);
+    }
 }
 /**
 */
 export class Velocity {
+
+    static __wrap(ptr) {
+        const obj = Object.create(Velocity.prototype);
+        obj.ptr = ptr;
+
+        return obj;
+    }
 
     __destroy_into_raw() {
         const ptr = this.ptr;
@@ -118,6 +159,16 @@ export class Velocity {
     free() {
         const ptr = this.__destroy_into_raw();
         wasm.__wbg_velocity_free(ptr);
+    }
+    /**
+    * @param {number} vx
+    * @param {number} vy
+    * @param {number} vz
+    * @returns {Velocity}
+    */
+    static new(vx, vy, vz) {
+        var ret = wasm.position_new(vx, vy, vz);
+        return Velocity.__wrap(ret);
     }
 }
 
