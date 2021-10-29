@@ -12,6 +12,12 @@ pub struct Position {
     y: f64,
     z: f64,
 }
+#[wasm_bindgen]
+impl Position {
+    fn new(x: f64, y: f64, z: f64) -> Self {
+        Self { x, y, z }
+    }
+}
 
 #[wasm_bindgen]
 pub struct Velocity {
@@ -19,12 +25,24 @@ pub struct Velocity {
     vy: f64,
     vz: f64,
 }
+#[wasm_bindgen]
+impl Velocity {
+    fn new(vx: f64, vy: f64, vz: f64) -> Self {
+        Self { vx, vy, vz }
+    }
+}
 
 #[wasm_bindgen]
 pub struct Time {
     year: i32,
     month: u8,
     day: u8,
+}
+#[wasm_bindgen]
+impl Time {
+    fn new(year: i32, month: u8, day: u8) -> Self {
+        Self { year, month, day }
+    }
 }
 
 #[wasm_bindgen]
